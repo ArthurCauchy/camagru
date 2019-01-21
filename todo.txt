@@ -1,0 +1,7 @@
+At setup.php start, show a prompt and ask if we should:
+- 1) drop all existing tables then create
+OR
+- 2) create without altering the existing tables
+
+
+Add cascade delete constraint in tables
