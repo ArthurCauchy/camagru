@@ -1,0 +1,42 @@
+AUCUN warning ni erreur
+php only
+framework css OK si pas de js avec
+sql PDO OBLIGATOIRE avec mode PDO::ERRMODE_EXCEPTION
+images:
+	-publiques
+	-likables
+	-commentables
+au moins un header, un footer et etre OK sur mobile
+formulaire SAFE:
+	- pas de mdp en clair
+	- XSS
+	- upload indesirable
+	- injection SQL
+
+Comptes:
+- Les mdps doivent etres robustes
+- Confirmation inscription par mail avec lien unique
+- Mail de reinitialisation de mot de passe possible
+- Deco en un clic depuis n'importe ou
+- Modification username, password et mdp possible
+
+Galerie:
+- Galerie publique MAIS like et comm uniquement pour les users
+- Notifier le photographe quand une photo est commentee. PEUT ETRE DESACTIVE
+- Pagination de 5 photos min par page
+
+Montage:
+- Rejeter POLIMENT l'internaute si il n'est pas connecte
+- Voir sujet
+
+DB:
+- images:
+	-likables
+	-commentables
+- users
+	- mail
+	- username
+	- passwd
+
+BONUS:
+- MVC
