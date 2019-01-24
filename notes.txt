@@ -12,6 +12,7 @@ formulaire SAFE:
 	- XSS
 	- upload indesirable
 	- injection SQL
+A terme, désactiver le debug et juste renvoyer 500 si erreur PHP.
 
 Comptes:
 - Les mdps doivent etres robustes
