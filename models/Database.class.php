@@ -29,4 +29,12 @@ class Database {
         }
         return FALSE;
     }
+
+    public function createUser($username, $email, $password) {
+        $stmt = $this->pdo->prepare("INSERT INTO `users` (`username`, `email`, `passwd`) VALUES (:username, :email, :passwd)");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':passwd', $password, PDO::PARAM_STR);
+        return $stmt->execute();
+    }
 }
