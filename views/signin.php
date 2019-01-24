@@ -6,8 +6,8 @@ if (isset($error)) {
 }
 
 ?>
-<p>Login form here.</p>
-<form method="POST" action="index.php?page=login">
+<p>Sign in to your account.</p>
+<form method="POST" action="index.php?page=signin">
     <input type="text" name="username"/>
     <input type="password" name="passwd"/>
     <input type="submit" value="OK"/>

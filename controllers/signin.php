@@ -11,7 +11,7 @@ if (isset($_POST["username"]) && isset($_POST["passwd"])) {
     $error = 'Wrong credentials.';
 }
 
-$title = 'Camagru - Login';
+$title = 'Camagru - Sign in';
 
 require('views/header.php');
-require('views/login.php');
+require('views/signin.php');

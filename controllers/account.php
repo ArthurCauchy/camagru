@@ -4,7 +4,7 @@ require_once("models/auth.php");
 
 if (!isLogged()) {
     http_response_code(302);
-    header("Location: index.php?page=login");
+    header("Location: index.php?page=signin");
     exit;
 }
 
