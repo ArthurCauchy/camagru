@@ -24,7 +24,7 @@ class Database {
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch();
-        if ($user && $password === $user['passwd']) { // use password_verify() and bcrypt ?
+        if ($user && password_verify($password, $user['passwd'])) {
             return TRUE;
         }
         return FALSE;

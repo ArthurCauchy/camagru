@@ -3,6 +3,4 @@ At setup.php start, show a prompt and ask if we should:
 OR
 - 2) create without altering the existing tables
 
-
 Add cascade delete constraint in tables
-Use bcrypt for password storage

@@ -8,7 +8,8 @@ if (isLogged()) {
     echo '<p><a href="index.php?page=logout">Logout</a></p>';
 } else {
     echo '<p>Welcome guest.</p>';
-    echo '<p><a href="index.php?page=login">Log in</a></p>';
+    echo '<p><a href="index.php?page=signin">Sign in</a></p>';
+    echo '<p><a href="index.php?page=signup">Sign up</a></p>';
 }
 ?>
 </body>
