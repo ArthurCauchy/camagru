@@ -8,9 +8,9 @@ if (isset($error)) {
 ?>
 <p>Join our community.</p>
 <form method="POST" action="index.php?page=signup">
-    <input type="text" name="username"/>
-    <input type="text" name="email"/>
-    <input type="password" name="passwd"/>
+    <input type="text" name="username" placeholder="username" value="<?php if (isset($_POST["username"])) echo $_POST["username"] ?>"/>
+    <input type="text" name="email" placeholder="email" value="<?php if (isset($_POST["email"])) echo $_POST["email"] ?>"/>
+    <input type="password" name="passwd" placeholder="password" value="<?php if (isset($_POST["passwd"])) echo $_POST["passwd"] ?>"/>
     <input type="submit" value="OK"/>
 </form>
 </body>

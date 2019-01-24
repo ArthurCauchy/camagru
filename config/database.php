@@ -9,6 +9,8 @@ $sql_table_users = "CREATE TABLE `users` (
 	`id` int(9) unsigned AUTO_INCREMENT PRIMARY KEY,
 	`username` VARCHAR(255) NOT NULL,
 	`email` VARCHAR(255) NOT NULL,
+	`verif_token` VARCHAR(255) NOT NULL,
+	`verified` BOOLEAN DEFAULT FALSE,
 	`passwd` VARCHAR(255) NOT NULL
 )";
 

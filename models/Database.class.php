@@ -19,6 +19,17 @@ class Database {
         return self::$_instance;
     }
 
+    public function checkAccountVerified($username) {
+        $stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE `username` = :username");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        if ($user && $user["verified"]) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
     public function checkUserCredentials($username, $password) {
         $stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE `username` = :username");
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
@@ -30,10 +41,11 @@ class Database {
         return FALSE;
     }
 
-    public function createUser($username, $email, $password) {
-        $stmt = $this->pdo->prepare("INSERT INTO `users` (`username`, `email`, `passwd`) VALUES (:username, :email, :passwd)");
+    public function createUser($username, $email, $verif_token, $password) {
+        $stmt = $this->pdo->prepare("INSERT INTO `users` (`username`, `email`, `verif_token`, `passwd`) VALUES (:username, :email, :token, :passwd)");
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':token', $verif_token, PDO::PARAM_STR);
         $stmt->bindParam(':passwd', $password, PDO::PARAM_STR);
         return $stmt->execute();
     }
