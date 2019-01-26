@@ -55,4 +55,10 @@ class Database {
         $stmt->bindParam(':passwd', $password, PDO::PARAM_STR);
         return $stmt->execute();
     }
+
+    public function getPictures() {
+        $stmt = $this->pdo->prepare("SELECT * FROM `pictures` ORDER BY `upload_date` DESC");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

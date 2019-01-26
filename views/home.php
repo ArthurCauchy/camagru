@@ -11,6 +11,11 @@ if (isLogged()) {
     echo '<p><a href="index.php?page=signin">Sign in</a></p>';
     echo '<p><a href="index.php?page=signup">Sign up</a></p>';
 }
+
+foreach($pictures as $pic) {
+    // do smthng
+}
+
 ?>
 </body>
 </html>
