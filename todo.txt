@@ -3,6 +3,6 @@ At setup.php start, show a prompt and ask if we should:
 OR
 - 2) create without altering the existing tables
 
-Add cascade delete constraint in tables
+Check whether delete casacde is working or not
 html5 form checking
 enforce alphanumerical usernames
