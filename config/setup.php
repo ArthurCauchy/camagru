@@ -8,7 +8,8 @@ try {
 
 	$db->exec($sql_table_users);
 	$db->exec($sql_table_pictures);
-	$db->exec($sql_table_comments);
+	$db->exec($sql_table_likes);
+    $db->exec($sql_table_comments);
 } catch (PDOException $e) {
 	error_log('PDO Exception: ' . $e->getMessage());
 	die('An error occured.');

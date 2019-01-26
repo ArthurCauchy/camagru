@@ -18,11 +18,24 @@ $sql_table_users = "CREATE TABLE `users` (
 $sql_table_pictures = "CREATE TABLE `pictures` (
 	`id` int(9) unsigned AUTO_INCREMENT PRIMARY KEY,
 	`user_id` int(9) unsigned NOT NULL,
-	`likes` int(9) unsigned NOT NULL,
 	FOREIGN KEY (`user_id`)
 		REFERENCES `users`(`id`)
 		ON DELETE CASCADE
 )";
+
+// Likes table
+$sql_table_likes = "CREATE TABLE `likes` (
+	`user_id` int(9) unsigned NOT NULL,
+	`picture_id` int(9) unsigned NOT NULL,
+	PRIMARY KEY (`user_id`, `picture_id`),
+	FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE,
+	FOREIGN KEY (`picture_id`)
+		REFERENCES `pictures`(`id`)
+		ON DELETE CASCADE
+)";
+
 
 // Comments table
 $sql_table_comments = "CREATE TABLE `comments` (
