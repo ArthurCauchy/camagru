@@ -5,3 +5,4 @@ OR
 
 Add cascade delete constraint in tables
 html5 form checking
+enforce alphanumerical usernames

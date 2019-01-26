@@ -12,7 +12,7 @@ if (isset($_POST["username"]) && isset($_POST["passwd"])) {
             header("Location: index.php?page=home");
             exit;
         }
-    } else {
+     } else {
          $error = 'Wrong username/password.';
      }
 }

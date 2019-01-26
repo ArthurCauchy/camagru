@@ -19,6 +19,13 @@ class Database {
         return self::$_instance;
     }
 
+    public function activateAccount($username, $verif_token) {
+        $stmt = $this->pdo->prepare("UPDATE `users` SET `verified` = TRUE WHERE `username` = :username AND `verif_token` = :token");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':token', $verif_token, PDO::PARAM_STR);
+        return $stmt->execute();
+    }
+
     public function checkAccountVerified($username) {
         $stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE `username` = :username");
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);

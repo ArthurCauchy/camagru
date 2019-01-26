@@ -1,18 +1,22 @@
 <?php
 
 require_once("models/Database.class.php");
+require_once("models/MailSender.class.php");
 
-if (isset($_POST["username"]) && isset($_POST["username"]) && isset($_POST["passwd"])) {
+if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["passwd"])) {
     $username = htmlspecialchars($_POST["username"]);
     $email = htmlspecialchars($_POST["email"]);
     $verif_token = bin2hex(openssl_random_pseudo_bytes(16));
     $password = password_hash($_POST["passwd"], PASSWORD_BCRYPT);
 
     if (Database::getInstance()->createUser($username, $email, $verif_token, $password)) {
-        //MailSender::
+        $mailsender = new MailSender("camagru@42.fr");
+        $mailsender->sendMail($email,
+            "Welcome to Camagru !",
+            "Welcome " . $username . " !\r\nOne last step : activate your account by clicking on this link : http://localhost:8100/index.php?page=activate&username=" . urlencode($username) . "&token=" . $verif_token);
         // TODO add success message or redirect
     } else {
-        $error = 'Wrong credentials.';
+        $error = 'Error.'; // TODO error brief
     }
 }
 
