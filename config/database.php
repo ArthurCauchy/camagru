@@ -18,6 +18,7 @@ $sql_table_users = "CREATE TABLE `users` (
 $sql_table_pictures = "CREATE TABLE `pictures` (
 	`id` int(9) unsigned AUTO_INCREMENT PRIMARY KEY,
 	`user_id` int(9) unsigned NOT NULL,
+	`upload_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	FOREIGN KEY (`user_id`)
 		REFERENCES `users`(`id`)
 		ON DELETE CASCADE
