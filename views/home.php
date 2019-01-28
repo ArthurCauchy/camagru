@@ -16,8 +16,7 @@ if (isLogged()) {
 <?php
 
 foreach($pictures as $pic) {
-    echo "<div class=\"gallery-item\">\n";
-    echo $pic['id'] . "\n";
+    echo "<div class=\"gallery-item\" style=\"background: url('uploads/" . $pic['id'] . ".png') no-repeat center center; background-size: cover\">\n";
     echo "<div class=\"bottom\">\n";
     echo "<div class=\"comment-btn\"><img src=\"res/images/message-square.svg\"/>" . $pic["comments"] . "</div>";
     echo "<div class=\"like-btn\"><img src=\"res/images/heart.svg\"/>" . $pic["likes"] . "</div>\n";
