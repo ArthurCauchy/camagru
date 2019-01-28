@@ -1,0 +1,59 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item
+{
+    position: relative;
+    margin: 10px;
+    background-color: #3498db;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.gallery-item .bottom
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.gallery-item .bottom *
+{
+    display: inline-block;
+    width: 50%;
+    font-size: 18px;
+    padding: 2px 0;
+}
+
+.gallery-item .bottom .like-btn
+{
+    background-color: #e74c3c;
+}
+
+.gallery-item .bottom .comment-btn
+{
+    background-color: #2ecc71;
+}
+
+.gallery-item .bottom * img
+{
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    margin: auto 10px;
+}

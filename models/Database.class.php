@@ -57,8 +57,10 @@ class Database {
     }
 
     public function getPictures() {
-        $stmt = $this->pdo->prepare("SELECT `pictures`.*, COUNT(`likes`.`picture_id`) AS likes
-FROM `pictures` LEFT JOIN `likes` ON `likes`.`picture_id` = `pictures`.`id`
+        $stmt = $this->pdo->prepare("SELECT `pictures`.*, COUNT(`likes`.`picture_id`) AS likes, COUNT(`comments`.`picture_id`) AS comments
+FROM `pictures`
+	LEFT JOIN `likes` ON `likes`.`picture_id` = `pictures`.`id`
+	LEFT JOIN `comments` ON `comments`.`picture_id` = `pictures`.`id`
 GROUP BY `pictures`.`id`
 ORDER BY `pictures`.`upload_date`");
         $stmt->execute();
