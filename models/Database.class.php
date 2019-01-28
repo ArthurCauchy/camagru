@@ -66,4 +66,11 @@ ORDER BY `pictures`.`upload_date`");
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function likePicture($user_id, $picture_id) {
+        $stmt = $this->pdo->prepare("INSERT INTO `likes` (`user_id`, `picture_id`) VALUES (:user_id, :picture_id)");
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':picture_id', $picture_id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
